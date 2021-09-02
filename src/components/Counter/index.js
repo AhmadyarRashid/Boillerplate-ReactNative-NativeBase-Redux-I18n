@@ -9,11 +9,6 @@ function Counter({count, changeCount, ...props}) {
   return (
     <React.Fragment>
       <Text
-        color="white"
-        fontWeight="bold"
-        mt={4}
-        textAlign="center">Counter App</Text>
-      <Text
         mt={4}
         color="white"
         textAlign="center">{count}</Text>
