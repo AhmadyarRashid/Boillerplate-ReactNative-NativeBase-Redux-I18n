@@ -1,19 +1,13 @@
-import React from 'react';
-import type {Node} from 'react';
-import { NativeBaseProvider } from 'native-base';
-import { Provider } from 'react-redux';
+import React from "react";
+import type { Node } from "react";
 
-import configureStore from './src/redux/configureStore';
+import AppProviderWrapper from "./src/AppProviderWrapper";
 import MainScreen from "./src/components/Main";
 
-const store = configureStore()
-
 const App: () => Node = () => (
-    <Provider store={store}>
-      <NativeBaseProvider>
-        <MainScreen />
-      </NativeBaseProvider>
-    </Provider>
+  <AppProviderWrapper>
+    <MainScreen />
+  </AppProviderWrapper>
 );
 
 export default App;
