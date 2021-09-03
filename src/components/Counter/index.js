@@ -1,11 +1,13 @@
 import React from "react";
 import { View, Text, Button } from "native-base";
-import { compose } from 'redux';
+import { compose } from "redux";
+import { useTranslation } from "react-i18next";
 
-import Colors from '../../colors';
-import connect from './connect';
+import Colors from "../../colors";
+import connect from "./connect";
 
-function Counter({count, changeCount, ...props}) {
+function Counter({ count, changeCount, ...props }) {
+  const { t } = useTranslation();
   return (
     <React.Fragment>
       <Text
@@ -16,11 +18,11 @@ function Counter({count, changeCount, ...props}) {
         <Button
           backgroundColor={Colors.red}
           onPress={() => changeCount(count - 1)}
-          mt={4}>Decrement</Button>
+          mt={4}>{t("common:decrement")}</Button>
         <Button
           backgroundColor={Colors.green}
           onPress={() => changeCount(count + 1)}
-          mt={4}>Increment</Button>
+          mt={4}>{t("common:increment")}</Button>
       </View>
     </React.Fragment>
   );

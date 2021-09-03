@@ -1,11 +1,14 @@
 import React from 'react';
-import {Text} from 'native-base';
+import { useTranslation } from "react-i18next";
+
 import ScreenWrapper from "../../components/ScreenWrapper";
+import Selector from "../../components/LanguageSelector";
 
 function SettingScreen(){
+  const { t } = useTranslation();
   return(
-    <ScreenWrapper headerTitle="Setting">
-      <Text color="white" textAlign="center">this is setting screen</Text>
+    <ScreenWrapper headerTitle={t("common:selectLanguage")}>
+      <Selector />
     </ScreenWrapper>
   )
 }
