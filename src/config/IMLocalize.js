@@ -6,12 +6,14 @@ import * as RNLocalize from 'react-native-localize';
 // add new languages
 import en from '../translations/en';
 import fr from '../translations/fr';
-import pashto from '../translations/pashto'
+import pashto from '../translations/pashto';
+import urdu from '../translations/urdu';
 
 const LANGUAGES = {
   en,
   fr,
-  pashto
+  pashto,
+  urdu
 };
 
 const LANG_CODES = Object.keys(LANGUAGES);
