@@ -1,20 +1,46 @@
 import React from "react";
-import { Text } from "native-base";
-import Colors from "react-native/Libraries/NewAppScreen/components/Colors";
-import {useTranslation} from 'react-i18next'
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useTranslation } from "react-i18next"
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import ScreenWrapper from "../../components/ScreenWrapper";
-import Counter from "../../components/Counter";
+import HomeScreen from "./home";
+import SettingScreen from "./setting";
 
-function HomeScreen({navigation}) {
-  const { t } = useTranslation();
+const Tab = createBottomTabNavigator();
+
+function HomeNavigation() {
+  const { t } = useTranslation()
   return (
-    <ScreenWrapper headerTitle={t("common:counterApp")}>
-      <Counter />
-      <Text textAlign="center" mt={4} color={Colors.primary}
-       onPress={() => navigation.navigate('Details')}>{t("common:goToDetails")}</Text>
-    </ScreenWrapper>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Home') {
+            iconName = focused ? 'ios-home' : 'ios-home-outline';
+          } else if (route.name === 'Settings') {
+            iconName = focused ? 'ios-settings' : 'ios-settings-outline';
+          }
+
+          return <Icon name={iconName} size={20} />;
+        },
+        tabBarActiveTintColor: "black",
+        tabBarInactiveTintColor: "gray",
+        headerShown: false,
+      })}
+    >
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ tabBarLabel: t('navigate:home') }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingScreen}
+        options={{ tabBarLabel: t('navigate:settings') }}
+      />
+    </Tab.Navigator>
   );
 }
 
-export default HomeScreen;
+export default HomeNavigation;
