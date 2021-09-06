@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import Colors from "../../colors";
 import connect from "./connect";
 
-function Counter({ count, changeCount, ...props }) {
+function Counter({ count, changeCount }) {
   const { t } = useTranslation();
   return (
     <React.Fragment>

@@ -1,8 +1,9 @@
-import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-import { useTranslation } from 'react-i18next';
-import { LANGUAGES } from "../../constants"
+import React from "react";
+import { View, Text } from "native-base";
+import Ionicons from "react-native-vector-icons/dist/Ionicons";
+import { useTranslation } from "react-i18next";
+import { LANGUAGES } from "../../constants";
+import Colors from "../../colors";
 
 const Selector = () => {
   const { t, i18n } = useTranslation();
@@ -13,61 +14,26 @@ const Selector = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.row}>
-        <Text style={styles.title}>{t('common:languageSelector')}</Text>
-        <Ionicons color='#fff' size={28} name='ios-language-outline' />
+    <View px={6}>
+      <View flexDirection="row" alignItems="center" justifyContent="space-between">
+        <Text color="#fff" fontSize={28} fontWeight="600" mb={18}>{t("common:languageSelector")}</Text>
+        <Ionicons color="#fff" size={28} name="ios-language-outline" />
       </View>
       {LANGUAGES.map(language => {
         const selectedLanguage = language.code === selectedLanguageCode;
-
         return (
-          <Pressable
-            key={language.code}
-            style={styles.buttonContainer}
-            disabled={selectedLanguage}
-            onPress={() => setLanguage(language.code)}
-          >
+          <View
+            key={language.code} mt={2} disabled={selectedLanguage}
+            onPress={() => setLanguage(language.code)}>
             <Text
-              style={[selectedLanguage ? styles.selectedText : styles.text]}>
-              {language.label}
-            </Text>
-          </Pressable>
+              fontSize={18} fontWeight="600" py={1}
+              color={selectedLanguage ? Colors.orange : Colors.white}
+            >{language.label}</Text>
+          </View>
         );
       })}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  },
-  title: {
-    color: '#fff',
-    fontSize: 28,
-    fontWeight: '600',
-    marginBottom: 18
-  },
-  buttonContainer: {
-    marginTop: 10
-  },
-  text: {
-    fontSize: 18,
-    color: '#fff',
-    paddingVertical: 4
-  },
-  selectedText: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: 'tomato',
-    paddingVertical: 4
-  }
-});
 
 export default Selector;

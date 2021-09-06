@@ -9,6 +9,6 @@ export const reducers = {
 export const LANGUAGES = [
   { code: "en", label: "English" },
   { code: "fr", label: "Français" },
-  { code: "pashto", label: "Pashto" },
+  { code: "pashto", label: "پښتو" },
   { code: "urdu", label: "اردو" },
 ];

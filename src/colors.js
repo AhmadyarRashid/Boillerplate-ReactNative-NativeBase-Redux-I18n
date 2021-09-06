@@ -1,4 +1,7 @@
 export default {
   red: 'red',
-  green: 'green'
+  green: 'green',
+  white: '#fff',
+  orange: "tomato",
+  grey: "grey"
 }

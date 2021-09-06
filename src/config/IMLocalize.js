@@ -60,4 +60,4 @@ i18n
     interpolation: {
       escapeValue: false
     }
-  });
+  }).then(r => console.log(r));

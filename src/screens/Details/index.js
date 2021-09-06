@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from "native-base";
+import { Text } from "native-base";
 import ScreenWrapper from "../../components/ScreenWrapper";
 import Colors from "react-native/Libraries/NewAppScreen/components/Colors";
 
