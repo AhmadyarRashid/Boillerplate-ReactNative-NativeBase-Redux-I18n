@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "native-base";
+import { View, Text, Pressable } from "native-base";
 import Ionicons from "react-native-vector-icons/dist/Ionicons";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES } from "../../constants";
@@ -22,14 +22,14 @@ const Selector = () => {
       {LANGUAGES.map(language => {
         const selectedLanguage = language.code === selectedLanguageCode;
         return (
-          <View
+          <Pressable
             key={language.code} mt={2} disabled={selectedLanguage}
             onPress={() => setLanguage(language.code)}>
             <Text
               fontSize={18} fontWeight="600" py={1}
               color={selectedLanguage ? Colors.orange : Colors.white}
             >{language.label}</Text>
-          </View>
+          </Pressable>
         );
       })}
     </View>
