@@ -1,4 +1,4 @@
-# My USC
+# Boillerplate-ReactNative-NativeBase-Redux-I18n
 ## Online order, fast delivery and Cheap rates
 
 MyUSC is a cloud base, online order and track your order app
