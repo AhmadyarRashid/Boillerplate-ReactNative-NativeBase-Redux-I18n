@@ -1,5 +1,5 @@
 # Boillerplate-ReactNative-NativeBase-Redux-I18n
-## No Need to setup all things again. JUST CLONE IT AND START WORKING ON IT
+## No Need to setup all things again. JUST CLONE IT AND START WORKING :) 
 
 ## Technologies
 
