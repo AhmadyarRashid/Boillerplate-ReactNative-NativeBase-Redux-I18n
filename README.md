@@ -1,11 +1,9 @@
 # Boillerplate-ReactNative-NativeBase-Redux-I18n
-## Online order, fast delivery and Cheap rates
-
-MyUSC is a cloud base, online order and track your order app
+## No Need to setup all things again. JUST CLONE IT AND START WORKING ON IT
 
 ## Technologies
 
-MyUSC app uses a number of open source libraries to work properly:
+App uses a number of open source libraries with LATEST VERSIONS:
 
 - [React Native](https://reactnative.dev/) 
 - [Native Base](https://nativebase.io/)
@@ -17,12 +15,12 @@ MyUSC app uses a number of open source libraries to work properly:
 
 ## Installation
 
-MyUSC requires [Node.js](https://nodejs.org/) v10+ to run.
+App required [Node.js](https://nodejs.org/) v10+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-cd MyUSC
+cd {INSTALLED_REPO}
 yarn install
 cd ios
 pod install
@@ -44,8 +42,8 @@ yarn run ios
 react-native run-ios
 ```
 
-We will prefer to generate signed apk using android studio for android .apk and xcode for iOS .ipa file.
+We will prefer to generate signed apk using android studio for android and xcode for iOS .ipa file.
 
 ## License
 
-USC
+MEO
